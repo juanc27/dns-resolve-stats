@@ -13,6 +13,7 @@ Instal:
 =======
 - Download and install the require libs
 - git clone https://github.com/juanc27/dns-resolve-stats.git <your_dir>
+- edit MySQL config (user, pwd, host) in dns_resolve_stats.cpp
 - make
 
 Use:
