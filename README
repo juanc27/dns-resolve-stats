@@ -1,7 +1,7 @@
 dns-resolve-stats
 ==========
 
-C++ program that execute DNS name resolve queries to list of servers and store delay stats in a MySQL DB
+C++ program that execute DNS name-resolve-queries to list of servers and store delay stats in a MySQL DB
 
 Requirements:
 ============
