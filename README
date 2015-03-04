@@ -16,6 +16,11 @@ Instal:
 - edit MySQL config (user, pwd, host) in dns_resolve_stats.cpp
 - make
 
+Caveats:
+========
+- I could not run mysql++ 3.2.1 on a MAC OX Yosemite. Simple example scripts using mysql++ were giving Segmentation Faults on libmysqlclient.18.dylib.
+- This project was developed in a x86_64 GNU/Linux  
+
 Use:
 ====
 ./dns_resolve_stats <time: int(1-1000)> <unit: 's' for secs 'm' for milisecs> <verbose: 'v'>
