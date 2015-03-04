@@ -1,0 +1,53 @@
+dns-resolve-stats
+==========
+
+C++ program that execute DNS name resolve queries to list of servers and store delay stats in a MySQL DB
+
+Requirements:
+============
+mysql-server 5.5 (includes mysql, mysql-devel and mysql-server): http://dev.mysql.com/doc/refman/5.5/en/installing.html
+mysql++ 3.2.1 (http://tangentsoft.net/mysql++/)
+ldns 1.6.17 (http://www.nlnetlabs.nl/projects/ldns/)
+
+Instal:
+=======
+- Download and install the require libs
+- git clone https://github.com/juanc27/dns-resolve-stats.git <your_dir>
+- make
+
+Use:
+====
+./dns_resolve_stats <time: int(1-1000)> <unit: 's' for secs 'm' for milisecs> <verbose: 'v'>
+examples: 
+          ./dns_resolve_stats 1 s 
+          ./dns_resolve_stats 100 m 
+          ./dns_resolve_stats 10 s v
+
+Sample Output:
+==============
+### STATS at the Beginning ###
+Name:    google.com | Avg:  16.920ms | StdDev: 786.128us | Queries:    4 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:07:52 | 
+Name:  facebook.com | Avg:   8.738ms | StdDev: 623.851us | Queries:    4 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:07:52 | 
+Name:   youtube.com | Avg:  16.743ms | StdDev: 658.292us | Queries:    4 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:07:52 | 
+Name:     yahoo.com | Avg:   9.714ms | StdDev:   1.299ms | Queries:    4 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:07:52 | 
+Name:      live.com | Avg:  36.986ms | StdDev:  25.120ms | Queries:    4 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:07:52 | 
+Name: wikipedia.org | Avg: 102.787ms | StdDev: 626.795us | Queries:    4 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:07:52 | 
+Name:     baidu.com | Avg: 195.083ms | StdDev:   5.972ms | Queries:    4 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:07:52 | 
+Name:   blogger.com | Avg:  16.562ms | StdDev: 442.800us | Queries:    4 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:07:53 | 
+Name:       msn.com | Avg: 134.900ms | StdDev: 146.968ms | Queries:    4 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:07:53 | 
+Name:        qq.com | Avg: 434.624ms | StdDev:  29.241ms | Queries:    4 | First: 2015-03-04 05:07:47 | Last: 2015-03-04 05:07:53 | 
+
+# Finish the test with CTRL-C #
+
+### STATS at the END ###
+Name:    google.com | Avg:  16.862ms | StdDev: 716.698us | Queries:   10 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:57:07 | 
+Name:  facebook.com | Avg:   8.773ms | StdDev: 688.072us | Queries:   10 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:57:07 | 
+Name:   youtube.com | Avg:  16.544ms | StdDev: 644.016us | Queries:   10 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:57:07 | 
+Name:     yahoo.com | Avg:   9.596ms | StdDev: 903.942us | Queries:   10 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:57:07 | 
+Name:      live.com | Avg:  26.792ms | StdDev:  24.609ms | Queries:   10 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:57:07 | 
+Name: wikipedia.org | Avg:  62.054ms | StdDev:  50.055ms | Queries:   10 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:57:07 | 
+Name:     baidu.com | Avg: 157.686ms | StdDev: 176.891ms | Queries:   10 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:57:08 | 
+Name:   blogger.com | Avg:  16.247ms | StdDev: 584.812us | Queries:   10 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:57:08 | 
+Name:       msn.com | Avg: 109.571ms | StdDev: 101.054ms | Queries:   10 | First: 2015-03-04 05:07:46 | Last: 2015-03-04 05:57:08 | 
+Name:        qq.com | Avg: 423.158ms | StdDev:  44.070ms | Queries:   10 | First: 2015-03-04 05:07:47 | Last: 2015-03-04 05:57:08 | 
+
